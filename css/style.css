@@ -636,6 +636,20 @@ body {
     margin-bottom: 15px;
 }
 
+.fortune-char-name {
+    font-size: 1.8rem;
+    color: var(--pixel-pink-dark);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.fortune-message {
+    font-size: 1.4rem;
+    color: var(--pixel-dark);
+    line-height: 1.5;
+    font-style: italic;
+}
+
 /* 页脚 */
 .footer {
     text-align: center;
