@@ -84,11 +84,19 @@ const characters = [
             {
                 name: "如我自观",
                 images: [
-                    "assets/images/如开自观/如我自观·插画.png",
+                    "assets/images/如我自观/如我自观·插画.png",
                     "assets/images/如我自观/如我自观·服饰.jpg",
                     "assets/images/如我自观/如我自观·进化1.png",
                     "assets/images/如我自观/如我自观·进化2.png",
                     "assets/images/如我自观/如我自观·进化3.png"
+                ]
+            },
+            {
+                name: "同我仰春",
+                images: [
+                    "assets/images/同我仰春/imgi_19_8338cb87387c22e52559c0001997664f_3780080381981446216.png",
+                    "assets/images/同我仰春/imgi_20_386e452c925fc6dcb28bb427c14bb83f_8724216524500334928.png",
+                    "assets/images/同我仰春/imgi_21_2af57415b2328fd578974177d181f732_6972255668482893097.png"
                 ]
             },
             {
@@ -147,6 +155,12 @@ const characters = [
                 name: "初晨浪隽",
                 images: [
                     "assets/images/初晨浪隽/初晨浪隽·邀请函.png"
+                ]
+            },
+            {
+                name: "花月予卿",
+                images: [
+                    "assets/images/花月予卿.jpg"
                 ]
             }
         ]
