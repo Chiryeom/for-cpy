@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffeef8"/>
+      <stop offset="100%" style="stop-color:#f8f0ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <text x="200" y="220" font-family="Arial, sans-serif" font-size="60" fill="#ffb6c1" text-anchor="middle">💕</text>
+  <text x="200" y="280" font-family="Arial, sans-serif" font-size="18" fill="#d4a5c9" text-anchor="middle">请添加角色图片</text>
+  <text x="200" y="310" font-family="Arial, sans-serif" font-size="14" fill="#d4a5c9" text-anchor="middle">assets/images/</text>
+</svg>

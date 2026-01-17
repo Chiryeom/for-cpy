@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✦ 欢迎来到你的世界 ✦</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 像素风字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 像素风背景装饰 -->
+    <div class="pixel-bg">
+        <!-- 像素骰子装饰 -->
+        <div class="pixel-dice" style="top: 8%; left: 12%;"></div>
+        <div class="pixel-dice" style="top: 75%; left: 88%;"></div>
+        <!-- 像素可乐装饰 -->
+        <div class="pixel-cola" style="top: 15%; left: 85%;"></div>
+        <div class="pixel-cola" style="top: 65%; left: 8%;"></div>
+        <!-- 像素天秤装饰 -->
+        <div class="pixel-libra" style="top: 45%; left: 5%;"></div>
+        <div class="pixel-libra" style="top: 35%; left: 92%;"></div>
+        <!-- 像素红钻装饰 -->
+        <div class="pixel-diamond" style="top: 20%; left: 25%;"></div>
+        <div class="pixel-diamond" style="top: 80%; left: 70%;"></div>
+        <!-- 像素星星装饰 -->
+        <div class="pixel-star" style="top: 10%; left: 50%;"></div>
+        <div class="pixel-star" style="top: 55%; left: 75%;"></div>
+        <div class="pixel-star" style="top: 30%; left: 15%;"></div>
+        <!-- 像素心形装饰 -->
+        <div class="pixel-heart-deco" style="top: 40%; left: 95%;"></div>
+        <div class="pixel-heart-deco" style="top: 85%; left: 20%;"></div>
+    </div>
+
+    <!-- ============ 登录弹窗 ============ -->
+    <div class="modal" id="loginModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content pixel-border login-modal">
+            <button class="modal-close pixel-btn-small" onclick="closeLogin()">×</button>
+            <div class="login-container">
+                <h2 class="login-title">✦ 欢迎光临 ✦</h2>
+                <p class="login-subtitle">请告诉我如何称呼你吧~</p>
+                
+                <div class="login-form">
+                    <div class="form-group">
+                        <label for="userName">你的名字</label>
+                        <input type="text" id="userName" placeholder="可以不填哦~" class="pixel-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="userNickname">你的昵称</label>
+                        <input type="text" id="userNickname" placeholder="可以不填哦~" class="pixel-input">
+                    </div>
+                    <button class="pixel-btn primary" onclick="confirmLogin()">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ 欢迎页面 ============ -->
+    <section class="welcome-section" id="welcomeSection">
+        <div class="welcome-container">
+            <!-- 像素风装饰框 -->
+            <div class="pixel-frame">
+                <h1 class="welcome-title">欢迎来到你的世界</h1>
+                <p class="welcome-subtitle" id="welcomeText">请选择你要翻的牌子</p>
+                
+                <!-- 下滑提示 -->
+                <div class="scroll-hint">
+                    <div class="pixel-arrow"></div>
+                    <span>向下滑动</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 主交互界面 ============ -->
+    <section class="main-section" id="mainSection">
+        <div class="main-container">
+            <h2 class="section-title">✦ 选择你的命运 ✦</h2>
+            
+            <!-- 三个主要选项 -->
+            <div class="options-grid">
+                <!-- 翻牌子 - 随机选择一个角色 -->
+                <div class="option-card" onclick="flipCard()">
+                    <div class="option-icon pixel-icon-card"></div>
+                    <h3 class="option-title">翻牌子</h3>
+                    <p class="option-desc">让命运为你选择</p>
+                </div>
+                
+                <!-- 查看卡面 - 查看所有角色 -->
+                <div class="option-card" onclick="showAllCharacters()">
+                    <div class="option-icon pixel-icon-heart"></div>
+                    <h3 class="option-title">朕都要</h3>
+                    <p class="option-desc">查看所有</p>
+                </div>
+                
+                <!-- 今日运势 -->
+                <div class="option-card" onclick="showFortune()">
+                    <div class="option-icon pixel-icon-crystal"></div>
+                    <h3 class="option-title">今日运势</h3>
+                    <p class="option-desc">看看今天的运气</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 翻牌结果界面 ============ -->
+    <div class="modal" id="flipModal">
+        <div class="modal-overlay" onclick="closeModal('flipModal')"></div>
+        <div class="modal-content pixel-border">
+            <button class="modal-close pixel-btn-small" onclick="closeModal('flipModal')">×</button>
+            
+            <!-- 翻牌动画容器 -->
+            <div class="flip-container" id="flipContainer">
+                <div class="card-flip" id="cardFlip">
+                    <div class="card-front">
+                        <div class="card-back-design">?</div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-name-display" id="flipResultName"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 结果信息 - 只显示角色名和按钮 -->
+            <div class="flip-result-info" id="flipResultInfo" style="display: none;">
+                <button class="pixel-btn primary large" onclick="enterCharacterDetail()">就你了！</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ 角色详情界面（翻牌后进入）============ -->
+    <div class="modal" id="characterDetailModal">
+        <div class="modal-overlay" onclick="closeModal('characterDetailModal')"></div>
+        <div class="modal-content pixel-border">
+            <button class="modal-close pixel-btn-small" onclick="closeModal('characterDetailModal')">×</button>
+            
+            <div class="character-detail-page">
+                <h2 class="detail-title" id="detailCharName"></h2>
+                
+                <!-- 三个抽取选项 -->
+                <div class="detail-options">
+                    <button class="pixel-btn option-btn" onclick="drawImage()">
+                        <span class="btn-text">让我看看你的真面目</span>
+                    </button>
+                    <button class="pixel-btn option-btn" onclick="drawQuoteAndVoice()">
+                        <span class="btn-text">我想对你说</span>
+                    </button>
+                </div>
+
+                <!-- 抽取结果展示区 -->
+                <div class="draw-result" id="drawResult" style="display: none;">
+                    <div class="result-image-container" id="resultImageContainer" style="display: none;">
+                        <img src="" alt="" id="resultImage" class="result-image">
+                    </div>
+                    <div class="result-quote-container" id="resultQuoteContainer" style="display: none;">
+                        <p class="result-quote" id="resultQuote"></p>
+                    </div>
+                </div>
+                
+                <!-- 心形收藏按钮 -->
+                <div class="heart-container">
+                    <button class="heart-btn" id="heartBtn" onclick="toggleHeart()">
+                        <span class="heart-icon empty">♡</span>
+                        <span class="heart-icon filled" style="display: none;">♥</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ 角色列表界面（亲自选择）============ -->
+    <div class="modal" id="charactersModal">
+        <div class="modal-overlay" onclick="closeModal('charactersModal')"></div>
+        <div class="modal-content pixel-border">
+            <button class="modal-close pixel-btn-small" onclick="closeModal('charactersModal')">×</button>
+            <h2 class="modal-title">✦ 查看卡面 ✦</h2>
+            <div class="characters-name-list" id="charactersNameList">
+                <!-- 角色名字列表将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ 角色全部内容展示界面（亲自选择后）============ -->
+    <div class="modal" id="characterFullModal">
+        <div class="modal-overlay" onclick="closeModal('characterFullModal')"></div>
+        <div class="modal-content pixel-border large">
+            <button class="modal-close pixel-btn-small" onclick="closeModal('characterFullModal')">×</button>
+            
+            <div class="character-full-view">
+                <h2 class="full-title" id="fullCharName"></h2>
+                
+                <!-- 图片画廊 -->
+                <div class="image-gallery" id="imageGallery">
+                    <!-- 图片将动态生成 -->
+                </div>
+                
+                <!-- 台词区域 -->
+                <div class="voice-quote-section">
+                    <h3 class="section-subtitle">✦ 台词展示 ✦</h3>
+                    <div class="quotes-list" id="quotesList">
+                        <!-- 台词将动态生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ 今日运势界面 ============ -->
+    <div class="modal" id="fortuneModal">
+        <div class="modal-overlay" onclick="closeModal('fortuneModal')"></div>
+        <div class="modal-content pixel-border">
+            <button class="modal-close pixel-btn-small" onclick="closeModal('fortuneModal')">×</button>
+            
+            <div class="fortune-container">
+                <h2 class="fortune-title">✦ 今日运势 ✦</h2>
+                
+                <!-- 抽取动画区域 -->
+                <div class="fortune-draw-area" id="fortuneDrawArea">
+                    <div class="fortune-cards-container" id="fortuneCardsContainer">
+                        <div class="fortune-card-item spinning" id="fortuneSpinner"></div>
+                    </div>
+                    <p class="fortune-hint">正在占卜中...</p>
+                </div>
+                
+                <!-- 运势结果区域 -->
+                <div class="fortune-result" id="fortuneResult" style="display: none;">
+                    <div class="fortune-card pixel-border-light">
+                        <div class="fortune-level" id="fortuneLevel">大吉</div>
+                        <div class="fortune-character">
+                            <img src="" alt="" id="fortuneCharImage" class="fortune-char-image">
+                            <p class="fortune-char-name" id="fortuneCharName"></p>
+                        </div>
+                        <p class="fortune-message" id="fortuneMessage"></p>
+                    </div>
+                    <button class="pixel-btn secondary" onclick="regenerateFortune()">
+                        <span class="btn-icon">🔄</span>
+                        <span>再抽一次</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>Made with ♥ for my dear friend</p>
+    </footer>
+
+    <script src="js/characters.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
