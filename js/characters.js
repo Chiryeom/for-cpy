@@ -168,6 +168,79 @@ const characters = [
                 images: [
                     "assets/images/花月予卿.jpg"
                 ]
+            },
+            {
+                name: "彼界无光",
+                images: [
+                    "assets/images/彼界无光/imgi_5_5e5c37d538aef9a2ce4ef1efe0ab526a_5411795113722199780.jpg",
+                    "assets/images/彼界无光/imgi_6_ffea5e1237656ec7ad5778f2bd205504_302053329077586168.png",
+                    "assets/images/彼界无光/imgi_9_d554d9a8febac3dc0dd3005b97ac7a02_8354328481191539226.png",
+                    "assets/images/彼界无光/imgi_10_36f3d6322f071af6ba7974818bc4c65f_7077927966071064022.png",
+                    "assets/images/彼界无光/imgi_11_a9d22115e561689544d1ae0ac9cb2673_7682640058454320133.png"
+                ]
+            },
+            {
+                name: "柑饴",
+                images: [
+                    "assets/images/柑饴/imgi_6_29fe56b93ccab64c7b72bcb1dec39a1b_1783527840932243325.png",
+                    "assets/images/柑饴/imgi_9_3beecd03e64c58cc7b2473910d689387_8441292638455751589.png",
+                    "assets/images/柑饴/imgi_10_2bf1e6eaa9a65859059f494df9287430_2842264931566197954.png",
+                    "assets/images/柑饴/imgi_11_c93511e7152f6723785b2871abe1c72b_1135378299250557557.png"
+                ]
+            },
+            {
+                name: "锦书枫回",
+                images: [
+                    "assets/images/锦书枫回/imgi_7_ac1ea920806a4abbfe4a7878f5c92842_6730728272924649146.jpg",
+                    "assets/images/锦书枫回/imgi_9_b92fb32c22d6ac45c52f5dfa4444c1b7_8769866412977845714.png",
+                    "assets/images/锦书枫回/imgi_16_8538f7617da9f6fb4b8abc757f2ae2cc_5383121220851282070.png",
+                    "assets/images/锦书枫回/imgi_17_7ca6ed112f6c7695e7d3c5aed6d91a02_135385914463458766.png",
+                    "assets/images/锦书枫回/imgi_18_5dffe43dc2c9cb5be5ce04642b4eca6a_1742988720891998667.png",
+                    "assets/images/锦书枫回/imgi_42_0a161a0dcbeceff4fc9832516fd71fc8_4125423464533019096.png"
+                ]
+            },
+            {
+                name: "卷中誓",
+                images: [
+                    "assets/images/卷中誓/imgi_5_92f8bafed5f991c3864ecb70491194a4_5360137868136057273.jpg",
+                    "assets/images/卷中誓/imgi_6_177b91a0ef3d462fa5cafc9503cb89e1_1566902458342109823.png",
+                    "assets/images/卷中誓/imgi_9_380489232f3729516190b334eb655956_9094992576427914132.png",
+                    "assets/images/卷中誓/imgi_10_789c22995d3ea456c999a3123d011e31_6626720086157350716.png",
+                    "assets/images/卷中誓/imgi_11_ffb3faff43add19c062f4735a5e22002_788289020059540017.png"
+                ]
+            },
+            {
+                name: "溯影同生",
+                images: [
+                    "assets/images/溯影同生/imgi_5_278d98ffe72ca996bd03678ec1d9b975_250172639487112188.jpg",
+                    "assets/images/溯影同生/imgi_6_abb5f2805ef4e61c026e8e071b3926d5_4670105324336689080.gif",
+                    "assets/images/溯影同生/imgi_7_ac0637cd1343fa116f07971d922e9b3d_1777486127746717986.png",
+                    "assets/images/溯影同生/imgi_16_0774a418f935d1623b8d31787478ef3d_2110038011054391944.png",
+                    "assets/images/溯影同生/imgi_17_e6a13549863bfd8f5f58befa692e4c5d_4515380985934378061.png",
+                    "assets/images/溯影同生/imgi_18_b88ec746e1e0f87f47ab4f8bf286c1f2_8915909205551366585.png",
+                    "assets/images/溯影同生/imgi_42_7069e84572526cce4a98db7c87a9fa1e_2918108000073060087.jpg"
+                ]
+            },
+            {
+                name: "循旅",
+                images: [
+                    "assets/images/循旅/imgi_6_6ce3a56ecf5f22c6c6ff43da62387ab9_7876402549512244454.png",
+                    "assets/images/循旅/imgi_9_fb8d7671a28ac396a2a5e3266f3eb890_4053579542779536001.png",
+                    "assets/images/循旅/imgi_16_3ea2042a350b18526537be9335c6a8d5_6004978027546360171.png",
+                    "assets/images/循旅/imgi_17_fb87c00d51efad4dd7d98b64a35b23d9_1177174541807885925.png",
+                    "assets/images/循旅/imgi_18_f133a0f467cd6b88f56e0322814fa3d0_5846792930104352380.png",
+                    "assets/images/循旅/imgi_42_196c61359349a253f0d76a7090f69af7_5903664218383403713.jpg"
+                ]
+            },
+            {
+                name: "与浪晴舞",
+                images: [
+                    "assets/images/与浪晴舞/imgi_5_25695b5bfdfdf4f04de9efac67c5a310_7313731087766209050.jpg",
+                    "assets/images/与浪晴舞/imgi_6_69a74a64b81791c4fed0b503fb391413_1679668098933438381.png",
+                    "assets/images/与浪晴舞/imgi_9_b014d05479b0079e575eea2f6fbacfa6_7821394237051023105.png",
+                    "assets/images/与浪晴舞/imgi_10_109b6292ed86d03829b39191c8e80c51_5923853031818769462.png",
+                    "assets/images/与浪晴舞/imgi_11_323b95fd8648f012e385f91b1362d383_2072215326711445674.png"
+                ]
             }
         ]
     }
