@@ -127,6 +127,7 @@ function drawImage() {
     const resultImage = document.getElementById('resultImage');
     
     resultImage.src = randomImg;
+    resultImage.onclick = () => previewImage(randomImg);
     
     // 显示结果
     drawResult.style.display = 'flex';
@@ -217,7 +218,7 @@ function viewFullCharacter(id) {
             <h3 style="color: #fb6f92;">◈ ${card.name} ◈</h3>
         </div>
         ${card.images.map(img => `
-            <img src="${img}" class="gallery-img" onerror="this.src='assets/images/placeholder.svg'">
+            <img src="${img}" class="gallery-img" onclick="previewImage('${img}')" onerror="this.src='assets/images/placeholder.svg'">
         `).join('')}
     `).join('');
     
@@ -274,6 +275,15 @@ function generateFortuneContent() {
 
 function regenerateFortune() {
     showFortune();
+}
+
+/**
+ * 图片预览
+ */
+function previewImage(src) {
+    const fullPreviewImage = document.getElementById('fullPreviewImage');
+    fullPreviewImage.src = src;
+    openModal('imagePreviewModal');
 }
 
 /**
