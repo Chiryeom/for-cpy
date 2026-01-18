@@ -83,14 +83,28 @@ function flipCard() {
     document.getElementById('flipResultName').textContent = currentFlipCharacter.name;
     
     openModal('flipModal');
+}
+
+/**
+ * 手动翻牌逻辑
+ */
+function manualFlip() {
+    const cardFlip = document.getElementById('cardFlip');
+    const flipResultInfo = document.getElementById('flipResultInfo');
     
-    // 延迟执行翻转
+    if (cardFlip.classList.contains('flipped')) return; // 防止重复点击
+    
+    cardFlip.classList.add('flipped');
+    
+    // 翻转完成后显示按钮
     setTimeout(() => {
-        cardFlip.classList.add('flipped');
+        flipResultInfo.style.display = 'block';
+        flipResultInfo.style.opacity = '0';
         setTimeout(() => {
-            flipResultInfo.style.display = 'block';
-        }, 800);
-    }, 500);
+            flipResultInfo.style.opacity = '1';
+            flipResultInfo.style.transition = 'opacity 0.5s';
+        }, 50);
+    }, 600);
 }
 
 /**
@@ -194,7 +208,9 @@ function toggleHeart() {
 function showAllCharacters() {
     const list = document.getElementById('charactersNameList');
     list.innerHTML = characters.map(c => `
-        <div class="name-item" onclick="viewFullCharacter(${c.id})">${c.name}</div>
+        <div class="name-item" onclick="viewFullCharacter(${c.id})">
+            <span>${c.name}</span>
+        </div>
     `).join('');
     
     openModal('charactersModal');
